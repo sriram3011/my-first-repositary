@@ -1,3 +1,4 @@
+package com.test.java;
 
 public class StringDeclaration {
 

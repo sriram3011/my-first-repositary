@@ -1,3 +1,5 @@
+package com.test.java;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +14,8 @@ public class StringCount {
         System.out.println("Please enter a string:");
         String st=br.readLine();
         String st1=st+" ";
-        int words=0,alpha=0,vowels=0,consonants=0;
+        String a="",v="",c="",d="",s="";
+        int words=0,alpha=0,vowels=0,consonants=0,digit=0,special=0;
         
         for(int i=0;i<st1.length();i++)
         {
@@ -21,8 +24,9 @@ public class StringCount {
                 words=words+1;
             }
             
-            if((st1.charAt(i)>='a' && st1.charAt(i)<='z') || (st1.charAt(i)>='A' && st1.charAt(i)<='Z'))
+            else if((st1.charAt(i)>='a' && st1.charAt(i)<='z') || (st1.charAt(i)>='A' && st1.charAt(i)<='Z'))
             {
+                a=a+st1.charAt(i)+",";
                 alpha=alpha+1;
                 if(st1.charAt(i)=='a'
                         ||st1.charAt(i)=='A'
@@ -38,20 +42,37 @@ public class StringCount {
                     
                 {
                     vowels=vowels+1;
+                    v=v+st1.charAt(i)+",";
+                    
+                    
                 }
                 else
                 {
                     consonants=consonants+1;
+                    c=c+st1.charAt(i)+",";
                 }
+            }
+            
+            else if(st1.charAt(i)>='0' && st1.charAt(i)<='9')
+
+            {
+                d=d+st1.charAt(i)+",";
+                digit=digit+1;
+            }
+            else
+            {
+                s=s+st1.charAt(i)+",";
+                special=special+1;
             }
                 
         }
         
         System.out.println("Words:"+words);
-        System.out.println("Alphabets:"+alpha);
-        System.out.println("Vowels:"+vowels);
-        System.out.println("consonants:"+consonants);
-        
+        System.out.println("Alphabets:"+alpha+" "+a);
+        System.out.println("Vowels:"+vowels+" "+v);
+        System.out.println("consonants:"+" "+c);
+        System.out.println("Digits:"+digit+" "+d);
+        System.out.println("Special Characters:"+special+" "+s);
 
     }
 

@@ -1,25 +1,23 @@
+package com.test.java;
 
-public class Break {
+public class Continue {
 
 	public static void main(String[] args) {
-		
+
 		int i,n=10;
 		for(i=1;i<=10;i++)
 		{
-			if(i>5)
+			if(i==6)
 			{
 				
-				break;
+				continue;
 				
 			}
 			{
 				System.out.println(i);
 				
 			}
-			
-		}
-				
-
 	}
 
+}
 }
